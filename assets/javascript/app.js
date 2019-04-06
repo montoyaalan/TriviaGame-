@@ -40,7 +40,28 @@ var myQuestions = [
          }
         }]; // these are the closing tags for my array/objects of questions 
 
-         
+
+//GLOBAL VARIABLES FOR COUNTERS AND TIMERS 
+
+var correctCount = 0;
+var wrongCount = 0;
+var unanswerCount = 0;
+var timer = 30;
+var intervalId;
+var userGuess ="";
+var running = false;
+var qCount = options.length;
+var pick;
+var index;
+var newArray = [];
+var holder = [];
+
+
+
+
+// FUNCTIONS 
+
+
 
 
 
