@@ -98,15 +98,30 @@ $(document).ready(function () {
     }
     //timer countdown
     function decrement() {
-        $("#timeleft").html("<h3>Time remaining: " + timer + "</h3>");
+        $("#timeleft").html("<h3>Time Left: " + timer + "</h3>");
         timer --;
     
         //stop timer if reach 0
         if (timer === 0) {
             unanswerCount++;
             stop();
-            $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+            $("#answerblock").html("<p>Times Up Sucka! The answer is: " + pick.choice[pick.answer] + "</p>");
             hidepicture();
         }	
     }
-    
+        //timer stop
+        function stop() {
+            running = false;
+            clearInterval(intervalId);
+        }
+        //randomly pick question in array if not already shown
+        //display question and loop though and display possible answers
+        function displayQuestion() {
+            //generate random index in array
+            index = Math.floor(Math.random()*options.length);
+            pick = options[index];
+        
+
+        }
+    })
+        
