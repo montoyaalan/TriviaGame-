@@ -79,4 +79,34 @@ $(document).ready(function () {
     var holder = [];
     
     
-}
+  $("#reset").hide();
+    //click start button to start game
+    $("#start").on("click", function () {
+            $("#start").hide();
+            displayQuestion();
+            runTimer();
+            for(var i = 0; i < options.length; i++) {
+        holder.push(options[i]);
+    }
+        })
+    //timer start
+    function runTimer(){
+        if (!running) {
+        intervalId = setInterval(decrement, 1000); 
+        running = true;
+        }
+    }
+    //timer countdown
+    function decrement() {
+        $("#timeleft").html("<h3>Time remaining: " + timer + "</h3>");
+        timer --;
+    
+        //stop timer if reach 0
+        if (timer === 0) {
+            unanswerCount++;
+            stop();
+            $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+            hidepicture();
+        }	
+    }
+    
