@@ -230,7 +230,7 @@ $(document).ready(function () {
                 unanswerCount = 0;
         
             } 
-            //THIS REFRESHES THE PAGE AFTER 5 SECONDS AFTER THE ANSWER IS DISPLAYED 
+            //THIS REFRESHES THE PAGE AFTER 5 SECONDS ONCE THE ANSWER IS DISPLAYED 
             else {
                 runTimer();
                 displayQuestion();
@@ -241,6 +241,7 @@ $(document).ready(function () {
         
         }
         
+        //IS THE FUNCTION FOR MY TRY AGAIN BUTTON -- IT RESTARTS EVERYTHING 
         $("#reset").on("click", function() {
             $("#reset").hide();
             $("#answerblock").empty();
