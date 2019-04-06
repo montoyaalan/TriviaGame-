@@ -13,7 +13,7 @@ $(document).ready(function () {
             question: "Corey and Tapanga are from what show?",
             choice:["Full House", "Beverley Hills 90210","Boy Meets World","Saved By The Bell"],
             answer: 2,
-            photo: "assets/images/bmw.jpg"
+            photo: "assets/images/bmw.gif"
          },
          {
             question: "Which one of these spices was NOT part of The Spice Girls?",
@@ -37,7 +37,7 @@ $(document).ready(function () {
             question: "What 90's Chick Flick was about Witchcraft?", 
             choice: ["Teen Witch", "Charmed", "Pretty In Pink", "The Craft" ],
             answer: 3,
-            photo: "assets/images/craft.jpg"
+            photo: "assets/images/kisses.gif"
         }, 
         {
             question: "Melissa Joan Hart played a teenager with powers in what show?",
@@ -229,7 +229,9 @@ $(document).ready(function () {
                 wrongCount = 0;
                 unanswerCount = 0;
         
-            } else {
+            } 
+            //THIS REFRESHES THE PAGE AFTER 5 SECONDS AFTER THE ANSWER IS DISPLAYED 
+            else {
                 runTimer();
                 displayQuestion();
         
