@@ -1,109 +1,82 @@
 // THIS IS ALL THE JQUERY AND JAVASCRIPT FOR MY TRIVIA GAME 
 // USED YOUTUBE VIDEOS AND A BLOG POST FOR INSPIRATION 
 $(document).ready(function () {
-
-
-//QUESTIONS 
-//USING AN ARRAY WILL MAKE THE QUERSTIONS EASY TO ITERATE OVER 
-
-var myQuestions = [
+    var options = [
         {
-            question: "Corey and Tapanga are from what show?";
-            choice:["Full House", "Beverley Hills 90210","Boy Meets World","Saved By The Bell"];
-            answer: 2;
-            photo: "";
-         },
-
-         {
-            question: "Which one of these spices were not part of The Spice Girls?";
-            choice:["Scary Spice", "Posh Spice","Tragic Spice","Baby Spice"];
-            answer: 2;
-            photo: "";
-         },
-         { 
-            question: "What movie coined the phrases 'AS IF' and 'Whatever!' ?";
-            choice:["It Takes Two", "Bebe's Kids","Encino Man","Clueless"];
-            answer: 3;
-            photo: "";
+            question: "Corey and Tapanga are from what show?",
+            choice:["Full House", "Beverley Hills 90210","Boy Meets World","Saved By The Bell"],
+            answer: 2,
+            photo: "assets/images/bmw.jpg"
          },
          {
-            question: "What show were Tia Mowry and Tamera Mowry in?";
-            choice:["Sister, Sister", "All That","Full House","Dawson's Creek"];
-            answer: 0;
-            photo: "";
-         },
+            question: "Which one of these spices were not part of The Spice Girls?",
+            choice:["Scary Spice", "Posh Spice","Tragic Spice","Baby Spice"],
+            answer: 2,
+            photo: "assets/images/spice.jpg"
+         }, 
          {
-            question: "Melissa Joan Hart played a teenager with powers in what show?";
-            choice:["Clarisa Explains It All", "Sabrina The Teenage Witch","So Weird","So Weird"];
-            answer: 1;
-            photo: "";
-         }
-        }]; // these are the closing tags for my array/objects of questions 
-
-
-//GLOBAL VARIABLES FOR COUNTERS AND TIMERS 
-
-var correctCount = 0;
-var wrongCount = 0;
-var unanswerCount = 0;
-var timer = 30;
-var intervalId;
-var userGuess ="";
-var running = false;
-var qCount = myQuestions.length;
-var pick;
-var index;
-var newArray = [];
-var holder = [];
-
-
-
-//JQUERY BEGINS HERE 
-// USING FUNCTIONS 
-
-$("#reset").hide();
-//CREATE START BUTTON TO BE CLICKED FOR GAME TO START
-$("#start").on("click", function () {
-    $("#start").hide();
-    displayQuestion();
-    startTimer();
-    for(var i = 0; i < myQuestions.length; i++) {
-holder.push(myQuestions[i]);
-}
-
-})
-
-//STARTS THE TIMER 
-function startTimer(){
-	if (!running) {
-	intervalId = setInterval(timeUp, 1000); 
-	running = true;
-	}
-}
-
-//COUNTDOWN TIMER 
-function timeUp() {
-	$("#timeleft").html("<h3>Time Left: " + timer + "</h3>");
-    timer --;
-    	//CONDITIONAL TO STOP TIMER AT 0
-	if (timer === 0) {
-		unanswerCount++;
-		stop();
-		$("#answerblock").html("<p>NOT COOL! The Answer was: " + pick.choice[pick.answer] + "</p>");
-		hidepicture();
-	}	
-}
-
-//FUNCTION TO STOP TIMER
-function stop() {
-	running = false;
-	clearInterval(intervalId);
-}
-//THE CODE TO RANDOMLY PICK A QUESTION FROM "myQuestions" ARRAY 
-//DISPLAY QUESTION AND LOOP THROUGH 
-//DISPLAY ALL ANSWERS 
-function displayQuestion() {
-	//RANDOMIZE THE INDEX OF "myQuestions" ARRAY 
-	index = Math.floor(Math.random()*myQuestions.length);
-    pick = myQuestions[index];
+            question: "What movie coined the phrases 'AS IF' and 'Whatever!' ?",
+            choice:["It Takes Two", "Bebe's Kids","Encino Man","Clueless"],
+            answer: 3,
+            photo: "assets/images/tenor.gif"
+        }, 
+        {
+            question: "What show were Tia Mowry and Tamera Mowry in?",
+            choice:["Sister, Sister", "All That","Full House","Dawson's Creek"],
+            answer: 0,
+            photo: "assets/images/sister.jpg"
+        }, 
+        {
+            question: "What 90's Chick Flick was about Witchcraft?", 
+            choice: ["Teen Witch", "Charmed", "Pretty In Pink", "The Craft" ],
+            answer: 3,
+            photo: "assets/images/craft.jpg"
+        }, 
+        {
+            question: "Melissa Joan Hart played a teenager with powers in what show?",
+            choice:["Clarisa Explains It All", "Sabrina The Teenage Witch","So Weird","The Days of Our Lives"],
+            answer: 1,
+            photo: "assets/images/sabrina.jpg"
+        }, 
+        {
+            question: "What 90's TV Show Launched Will Smith's Career?", 
+            choice: ["The Cosby Show", "The Famous Jet Jackson", "The Fresh Prince of Bel Air", "Baywatch" ],
+            answer: 2,
+            photo: "assets/images/prince.jpg"
+        }, 
+        {
+            question: "What group is in charge of the 90's hit 'C'Mon Ride The Train'?", 
+            choice: ["Salt N Pepa", "Destiny's Child", "Quad City DJ's", "Coolio" ],
+            answer: 2,
+            photo: "assets/images/djs.jpg"
+        },
+        {
+            question: "Which one of these boy bands had member Justin Timberlake?", 
+            choice: ["The Backstreet Boys", "Blink 182", "98 Degrees", "N'SYNC" ],
+            answer: 3,
+            photo: "assets/images/"
+            
+        }, 
+        {
+            question: "What Movie starred Bugs Bunny and Michael Jordan?", 
+            choice: ["Space Jam", "Kazam!", "Who Framed Roger Rabbit", "Baywatch" ],
+            answer: 0,
+            photo: "assets/images/space.gif"
+        }
+    ];
     
+    var correctCount = 0;
+    var wrongCount = 0;
+    var unanswerCount = 0;
+    var timer = 30;
+    var intervalId;
+    var userGuess ="";
+    var running = false;
+    var qCount = options.length;
+    var pick;
+    var index;
+    var newArray = [];
+    var holder = [];
+    
+    
+}
