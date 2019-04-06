@@ -7,7 +7,7 @@
   text-align: center;
   margin: 10px auto;
   font-size: 20px;
-  background-color: white;
+  background-color: rgba(119, 231, 231, 0.582);
 
 }
 
@@ -27,6 +27,7 @@ img {
 }
 
 #reset {
+    position: relative;
   visibility: visible;
 }
 
@@ -38,17 +39,18 @@ body {
 
 h1 {
   text-align: center;
-  color: white;
+  text-decoration-line: white;
+  color: rgb(255, 255, 255);
   font-weight: bolder;
   padding: 20px;
-  font-size: 45px;
+  font-size: 55px;
 }
 
 p {
   margin: 10px;
   font-weight: bold;
-  color: red;
-  font-size: 20px;
+  color: rgb(255, 2, 2);
+  font-size: 30px;
 }
 
 h2, h4 {
@@ -58,8 +60,8 @@ h2, h4 {
 
 .wrapper {
   margin: 10px auto;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 2px solid #403fd3;
+  background-color: rgba(255, 255, 255, 0.829);
+  border: 2px solid rgb(255, 12, 255);
   height: 500px;
   width: 60%;
   text-align: center;
