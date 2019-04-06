@@ -50,7 +50,7 @@ var timer = 30;
 var intervalId;
 var userGuess ="";
 var running = false;
-var qCount = options.length;
+var qCount = myQuestions.length;
 var pick;
 var index;
 var newArray = [];
@@ -63,6 +63,28 @@ var holder = [];
 
 $("#reset").hide();
 
+//CREATE START BUTTON TO BE CLICKED FOR GAME TO START
+$("#start").on("click", function () {
+    $("#start").hide();
+    displayQuestion();
+    startTimer();
+    for(var i = 0; i < myQuestions.length; i++) {
+holder.push(myQuestions[i]);
+}
+})
+
+//STARTS THE TIMER 
+function startTimer(){
+	if (!running) {
+	intervalId = setInterval(decrement, 1000); 
+	running = true;
+	}
+}
+
+//COUNTDOWN TIMER 
+function decrement() {
+	$("#timeleft").html("<h3>Time Left: " + timer + "</h3>");
+	timer --;
 
 
 
