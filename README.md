@@ -1,7 +1,10 @@
 # TriviaGame-
 This is the repository for Homework assignment 5. The second jQuery assignment. 
 
-I went with option one: "Basic Quiz "Timed Form)"
+I went with option one: "Basic Quiz (Timed Form)"
+
+Then I followed a blog post that actually walked me through the Advanced Assignment.
+By accident I completed the advanced assignemnt!
 
 The theme for my Trivia Assignment is 90's Pop Culture. 
 
