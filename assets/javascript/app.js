@@ -58,9 +58,10 @@ var holder = [];
 
 
 
+//JQUERY BEGINS HERE 
+// USING FUNCTIONS 
 
-// FUNCTIONS 
-
+$("#reset").hide();
 
 
 
