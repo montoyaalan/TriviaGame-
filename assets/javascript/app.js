@@ -62,7 +62,6 @@ var holder = [];
 // USING FUNCTIONS 
 
 $("#reset").hide();
-
 //CREATE START BUTTON TO BE CLICKED FOR GAME TO START
 $("#start").on("click", function () {
     $("#start").hide();
@@ -71,6 +70,7 @@ $("#start").on("click", function () {
     for(var i = 0; i < myQuestions.length; i++) {
 holder.push(myQuestions[i]);
 }
+
 })
 
 //STARTS THE TIMER 
@@ -94,7 +94,16 @@ function timeUp() {
 	}	
 }
 
-
-
-
-} // THIS CURLY BRACE IS THE END OF MY JAVASCRIPT CODE 
+//FUNCTION TO STOP TIMER
+function stop() {
+	running = false;
+	clearInterval(intervalId);
+}
+//THE CODE TO RANDOMLY PICK A QUESTION FROM "myQuestions" ARRAY 
+//DISPLAY QUESTION AND LOOP THROUGH 
+//DISPLAY ALL ANSWERS 
+function displayQuestion() {
+	//RANDOMIZE THE INDEX OF "myQuestions" ARRAY 
+	index = Math.floor(Math.random()*myQuestions.length);
+    pick = myQuestions[index];
+    
