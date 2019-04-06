@@ -10,7 +10,7 @@ $(document).ready(function () {
     //AN ARRAY WITH QUESTIONS WILL ALLOW IT TO ITERATE EASIER 
     var options = [
         {
-            question: "Corey and Tapanga are from what show?",
+            question: "Corey and Topanga are from what show?",
             choice:["Full House", "Beverley Hills 90210","Boy Meets World","Saved By The Bell"],
             answer: 2,
             photo: "assets/images/bmw.gif"
@@ -31,7 +31,7 @@ $(document).ready(function () {
             question: "What show were Tia Mowry and Tamera Mowry in?",
             choice:["Sister, Sister", "All That","Full House","Dawson's Creek"],
             answer: 0,
-            photo: "assets/images/sister.jpg"
+            photo: "assets/images/sisters.gif"
         }, 
         {
             question: "What 90's Chick Flick was about Witchcraft?", 
@@ -49,7 +49,7 @@ $(document).ready(function () {
             question: "What 90's TV Show Launched Will Smith's Career?", 
             choice: ["The Cosby Show", "The Famous Jet Jackson", "The Fresh Prince of Bel Air", "Baywatch" ],
             answer: 2,
-            photo: "assets/images/prince.jpg"
+            photo: "assets/images/prince.gif"
         }, 
         {
             question: "What group is in charge of the 90's hit 'C'Mon Ride The Train'?", 
