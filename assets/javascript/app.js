@@ -76,15 +76,24 @@ holder.push(myQuestions[i]);
 //STARTS THE TIMER 
 function startTimer(){
 	if (!running) {
-	intervalId = setInterval(decrement, 1000); 
+	intervalId = setInterval(timeUp, 1000); 
 	running = true;
 	}
 }
 
 //COUNTDOWN TIMER 
-function decrement() {
+function timeUp() {
 	$("#timeleft").html("<h3>Time Left: " + timer + "</h3>");
-	timer --;
+    timer --;
+    	//CONDITIONAL TO STOP TIMER AT 0
+	if (timer === 0) {
+		unanswerCount++;
+		stop();
+		$("#answerblock").html("<p>NOT COOL! The Answer was: " + pick.choice[pick.answer] + "</p>");
+		hidepicture();
+	}	
+}
+
 
 
 
