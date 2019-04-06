@@ -6,6 +6,8 @@
 
 
 $(document).ready(function () {
+
+    //AN ARRAY WITH QUESTIONS WILL ALLOW IT TO ITERATE EASIER 
     var options = [
         {
             question: "Corey and Tapanga are from what show?",
@@ -116,7 +118,7 @@ $(document).ready(function () {
     
     
   $("#reset").hide();
-    //click start button to start game
+    //CREATING CLICK BUTTON TO START THE GAME 
     $("#start").on("click", function () {
             $("#start").hide();
             displayQuestion();
@@ -125,19 +127,19 @@ $(document).ready(function () {
         holder.push(options[i]);
     }
         })
-    //timer start
+    // CREATING FUNCTION TO START TIMER
     function runTimer(){
         if (!running) {
         intervalId = setInterval(countD, 1000); 
         running = true;
         }
     }
-    //timer countdown
+    //FUNCTION TO HAVE TIMER COUNTDOWN 
     function countD () {
         $("#timeleft").html("<h3>Time Left: " + timer + "</h3>");
         timer --;
     
-        //stop timer if reach 0
+        //WHAT WILL HAPPEN WHEN THE TIMER HITS ZERO 
         if (timer === 0) {
             unanswerCount++;
             stop();
@@ -145,13 +147,14 @@ $(document).ready(function () {
             hidepicture();
         }	
     }
-        //timer stop
+        //FUNCTION FOR TIMER TO STOP WHEN THE PLAYER ANSWERS 
         function stop() {
             running = false;
             clearInterval(intervalId);
         }
-        //NEED TO ADD FORMULA TO RANDOMLY PICK QUESTION IN ARRAY 
-//DISPLAY QUESTION AND LOOP THROUGH 
+    
+
+//DISPLAY QUESTION AND ALLOWS LOOP TO LOOP THROUGH 
 //ALSO DISPLAY POSSIBLE ANSWERS 
         function displayQuestion() {
             //GENERATE RANDOM QUESTION IN THE ARRAY 
@@ -184,7 +187,7 @@ $(document).ready(function () {
             //grab array position from userGuess
             playerChoice = parseInt($(this).attr("data-guessvalue"));
         
-            //correct guess or wrong guess outcomes
+            //CORRECT GUESSES/INCORRECT GUESSES OUTCOMES
             if (playerChoice === pick.answer) {
                 stop();
                 correctCount++;
@@ -217,7 +220,7 @@ $(document).ready(function () {
                 // THIS IS WHEN ALL QUESTIONS HAVE BEEN USED 
                 $("#questionblock").empty();
                 // WRITING IN HTML VIA JQUERY 
-                $("#questionblock").html("<h3>Game Over Man!<br> Check The Score Board! </h3>");
+                $("#questionblock").html("<h3>Game Over Man! Check The Score Board! </h3>");
                 $("#answerblock").append("<h4> Correct: " + correctCount + "</h4>" );
                 $("#answerblock").append("<h4> Incorrect: " + wrongCount + "</h4>" );
                 $("#answerblock").append("<h4> Unanswered: " + unanswerCount + "</h4>" );
