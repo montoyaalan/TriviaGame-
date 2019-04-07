@@ -3,11 +3,14 @@
 // MAINLY BLOG POST BC IT WAS EASY TO FOLLOW AND I PREFER TO READ 
 
 // STYLING WAS TAKEN FROM YOUTUBE VIDEO
+// CODE TAKEN FROM BLOG POST MIXED WITH IN CLASS ACTIVITIES 
+// HELP FROM PEERS IN TECH HEAVILY NEEDED FOR THIS ONE. 
+//WAS NOT AN  EASY ASSIGNMENT 
 
 
 $(document).ready(function () {
 
-    //AN ARRAY WITH QUESTIONS WILL ALLOW IT TO ITERATE EASIER 
+    //AN ARRAY WITH QUESTIONS WILL ALLOW IT TO ITERATE SMOOTHLY
     var options = [
         {
             question: "Corey and Topanga are from what show?",
@@ -103,11 +106,16 @@ $(document).ready(function () {
 
 
     //ALL VARIABLES 
+
+    //ALL MY COUNTER VARIABKLES 
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
+
+    // TIMER VARIABLE 
     var timer = 15;
     var intervalId;
+    // THE PLAYERS INPUT 
     var playerChoice ="";
     var running = false;
     var qCount = options.length;
@@ -139,7 +147,7 @@ $(document).ready(function () {
         $("#timeleft").html("<h3>Time Left: " + timer + "</h3>");
         timer --;
     
-        //WHAT WILL HAPPEN WHEN THE TIMER HITS ZERO 
+        //WHAT WILL HAPPEN WHEN THE TIMER HITS ZERO WITH USE OF CONDITIONAL 
         if (timer === 0) {
             unanswerCount++;
             stop();
