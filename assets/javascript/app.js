@@ -162,17 +162,13 @@ $(document).ready(function () {
             //THE VARIABLE FOR PICK WILL BE EQUAL TO THE CHOSEN QUESTION IN THE ARRAY 
             pick = options[index];
         
- //	if (pick.shown) {
-        //		//recursive to continue to generate new index until one is chosen that has not shown in this game yet
-        //		displayQuestion();
-        //	} else {
-        //		console.log(pick.question);
                 //ITERATE THROUGH THE ANSWER ARRAY AND DISPLAY 
                 $("#questionblock").html("<h2>" + pick.question + "</h2>");
                 for(var i = 0; i < pick.choice.length; i++) {
                     var playerGuess = $("<div>");
                     //CREATING CLASS ".answerChoice" FOR CSS STYLING 
                     playerGuess.addClass("answerchoice");
+                    //UPDATING MY DIV CREATED ABOVE WITH PLAYERS GUESS AND MATCHES PICK WITH 
                     playerGuess.html(pick.choice[i]);
                     //ASSSIGN ARRAY POSITION TO IT SO IT CAN EVALUATE PLAYERS ANSWER
                     playerGuess.attr("data-guessvalue", i);
@@ -184,7 +180,7 @@ $(document).ready(function () {
         
     //CLICK FUNCTION TO SELECT ANSWERS AND OUTCOMES 
         $(".answerchoice").on("click", function () {
-            //grab array position from userGuess
+            //GRAB ARRAY POSITION FROM playerGuess
             playerChoice = parseInt($(this).attr("data-guessvalue"));
         
             //CORRECT GUESSES/INCORRECT GUESSES OUTCOMES
