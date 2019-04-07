@@ -8,6 +8,9 @@ By accident I completed the advanced assignemnt!
 
 The theme for my Trivia Assignment is 90's Pop Culture. 
 
+This assignment was tricky as I used the previous homework and in class activities for inspiration.
+Had Tutor from before HEAVILY walk me through as well as used a blog post to guide me through the skeleton of what the code should look like. The styling was taken from an instructional YouTube video. 
+
 Instructions:
 
 Overview
